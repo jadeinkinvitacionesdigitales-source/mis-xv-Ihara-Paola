@@ -42,10 +42,7 @@ window.CONFIG = {
   textoColores: "Colores prohibidos",
   colores: [
     { nombre: "Lila", color: "#A47FB5" },
-    { nombre: "Celeste", color: "#A8EAF7" },
-    { nombre: "Azul", color: "#1F5A9C" },
-    { nombre: "Dorado", color: "#E9BC5C" },
-    { nombre: "Champán", color: "#E3D3AB" }
+    { nombre: "Celeste", color: "#A8EAF7" }
   ],
 
   // ---- Galería de fotos ----
