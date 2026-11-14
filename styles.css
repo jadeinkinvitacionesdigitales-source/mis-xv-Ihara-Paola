@@ -72,6 +72,17 @@ h2 { font: 400 36px/1.15 var(--script); color: var(--rosa); margin-bottom: 16px;
 .reveal { position: relative; opacity: 0; transform: translateY(16px); transition: opacity .8s, transform .8s; }
 .reveal.in { opacity: 1; transform: none; }
 
+/* ---- Fotos: marco de postal con borde de correo aéreo ---- */
+.foto { position: relative; margin: 0 auto; padding: 9px; background: var(--correo), #fffaf0; background-size: 56px 56px; box-shadow: 0 10px 26px rgba(31,85,120,.28); }
+.foto::before { content: ""; position: absolute; inset: 9px; border: 2px solid #fffaf0; pointer-events: none; z-index: 1; }
+.foto img { width: 100%; aspect-ratio: 2 / 3; object-fit: cover; border: 6px solid #fffaf0; }
+.foto-sec.principal { padding-top: 40px; }
+.foto-sec.principal .foto { width: 100%; rotate: -1.5deg; }
+.foto-sec.izq .foto, .foto-sec.der .foto { width: 82%; }
+.foto-sec.izq .foto { rotate: -3deg; }
+.foto-sec.der .foto { rotate: 3deg; }
+.foto-sec .foto::after { content: ""; position: absolute; top: -14px; left: 50%; width: 90px; height: 26px; translate: -50% 0; rotate: 2deg; background: rgba(233,188,92,.75); box-shadow: 0 2px 4px rgba(0,0,0,.12); z-index: 2; }
+
 .invitado { padding-top: 34px; }
 .invitado p { font-size: 13px; letter-spacing: .14em; text-transform: uppercase; }
 .invitado strong { display: block; font: 400 32px/1.3 var(--script); color: var(--teal); }

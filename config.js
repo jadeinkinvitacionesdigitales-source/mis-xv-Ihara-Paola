@@ -82,6 +82,14 @@ window.CONFIG = {
   textoTocaPantalla: "Toca el sobre para abrir",
   inicioCancion: 0,             // segundo donde empieza a sonar la canción
 
+  // ---- Fotos de la quinceañera ----
+  // La primera es la principal (va debajo de la carta); las demás se reparten entre las secciones.
+  fotos: [
+    "assets/foto-1.webp",
+    "assets/foto-2.webp",
+    "assets/foto-3.webp"
+  ],
+
   img: {
     video: "assets/sobre.mp4",
     cancion: "assets/magalenha.mp3"

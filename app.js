@@ -28,6 +28,13 @@
       '<path fill="#c79a3a" d="M150 18c-9-6-12-9-12-12 0-5 8-6 12-1 4-5 12-4 12 1 0 3-3 6-12 12Z"/></svg>';
   };
 
+  // Fotos: marco tipo postal, la principal más grande
+  var F = C.fotos || [];
+  var foto = function (n, cls) {
+    return F[n] ? '<section class="foto-sec ' + cls + '"><div class="reveal"><figure class="foto">' +
+      '<img src="' + esc(F[n]) + '" alt="' + esc(C.nombre) + '" loading="lazy"></figure></div></section>' : "";
+  };
+
   // Invitado personalizado: index.html?n=Juan%20Pérez&c=2
   var params = new URLSearchParams(location.search);
   var guest = params.get("n");
@@ -73,6 +80,7 @@
       ? '<section class="invitado"><div class="reveal"><p>Esta invitación es especialmente para</p><strong>' + esc(guest) + "</strong>" +
         (seats ? "<p>Válida para " + seats + " " + (seats === 1 ? "persona" : "personas") + "</p>" : "") + "</div></section>"
       : "") +
+    foto(0, "principal") +
     // Celebración
     sec(adorno("guacamaya-roja", "ave-roja") + "<h2>" + esc(C.tituloCelebracion) + "</h2>" +
       '<div class="pase"><div class="pase-top"><span>' + esc(C.tituloPase) + "</span><span>XV</span></div>" +
@@ -80,6 +88,7 @@
       dato("Lugar", C.lugar, "ancho") + dato("Dirección", C.direccion, "ancho") + "</div>" +
       (C.linkMapa ? '<div class="pase-mapa"><a class="btn" href="' + esc(C.linkMapa) + '" target="_blank" rel="noreferrer">' + esc(C.textoBotonMapa) + "</a></div>" : "") +
       "</div>") +
+    foto(1, "izq") +
     // Dress code
     sec("<h2>" + esc(C.tituloDress) + "</h2>" + adorno("pareja", "pareja") +
       '<p class="estilo">' + esc(C.estiloDress) + "</p>" +
@@ -92,6 +101,7 @@
       '<div class="mt"><a class="btn" href="' + esc(C.linkGaleria) + '" target="_blank" rel="noreferrer">' + esc(C.textoBotonGaleria) + "</a></div>") +
     // Obsequios
     sec(adorno("sobres", "icono") + "<h2>" + esc(C.tituloRegalos) + "</h2>" + paras(C.textoRegalos), "regalos") +
+    foto(2, "der") +
     // Confirmación
     sec(adorno("guacamaya-azul", "ave-azul") + "<h2>" + esc(C.tituloConfirmar) + "</h2><p>" + esc(C.textoConfirmar) + "</p>" +
       '<form class="rsvp" id="rsvpForm" novalidate>' +
